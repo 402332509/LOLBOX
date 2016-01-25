@@ -1,0 +1,18 @@
+
+2016-01-25 23:15:37
+[INFO]-[Thread: main]-[com.common.config.InitProxy.initLog()]: 日志初始化成功.
+
+2016-01-25 23:15:37
+[INFO]-[Thread: main]-[com.common.config.InitProxy.initAll()]: 初始化日志完成!
+
+2016-01-25 23:15:39
+[INFO]-[Thread: main]-[com.common.config.InitProxy.initTask()]: 3
+
+2016-01-25 23:16:32
+[INFO]-[Thread: main]-[com.common.config.InitProxy.initLog()]: 日志初始化成功.
+
+2016-01-25 23:16:32
+[INFO]-[Thread: main]-[com.common.config.InitProxy.initAll()]: 初始化日志完成!
+
+2016-01-25 23:16:33
+[INFO]-[Thread: main]-[com.common.config.InitProxy.initTask()]: 3

@@ -13,6 +13,8 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.task.spider.PageSpider;
+import com.util.DataSourceFactory;
 
 public class InitProxy {
 	public boolean initAll() {
@@ -72,9 +74,10 @@ public class InitProxy {
 		C3p0Plugin.start();
 		// 配置ActiveRecord插件
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(C3p0Plugin);
-		arp.start();
 		// 所有配置在 MappingKit 中搞定
 		_MappingKit.mapping(arp);
+		arp.start();
+		
 		
 	}
 
@@ -82,13 +85,14 @@ public class InitProxy {
 	 * 初始化任务
 	 */
 	public void initTask() {
-//		GlobalStaticVar.BusinessLog.info(Db.find("select * from blog").size());
-//		System.out.println("hello world");
-		
-	}
 
+		PageSpider ps = new PageSpider();
+		ps.initTask();
+	}
+	
 	public static C3p0Plugin createC3p0Plugin() {
 		return new C3p0Plugin(PropKit.get("jdbcUrl"), PropKit.get("user"),
 				PropKit.get("password").trim());
 	}
+
 }
